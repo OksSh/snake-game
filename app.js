@@ -6,7 +6,7 @@ let blockSize = 10;
 let widthInBlocks = width / blockSize;
 let heightInBlocks = height / blockSize;
 let score = 0;
-let timeout = 600;
+let timeout = 300;
 let directions = {
   37: 'left',
   38: 'up',
@@ -144,10 +144,10 @@ let Snake = function () {
 
     if (changingHead.equal(apple.position)) {
       score++;
-      if (timeout >= 200) {
-        timeout -= 80;
+      if (timeout >= 100) {
+        timeout -= 40;
       } else {
-        timeout -= 7;
+        timeout -= 2;
       }
 
       apple.moveApple(this.segments);
